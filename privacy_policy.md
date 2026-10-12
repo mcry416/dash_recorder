@@ -3,9 +3,9 @@
 ### Developer: Qingyu Meng
 ### Contact: mcry416@outlook.com
 ### Effective date: 3 October 2026
-### Last updated: 3 October 2026
+### Last updated: 12 October 2026
 
-Qingyu Meng ("we", "us", or "our") respects your privacy. This Privacy Policy explains how the iOS app 仪表盘·记录 (Dash Record) and its widget (the "App") handle information on your device, why that information is used, how long it remains, and how you can control it.
+Qingyu Meng ("we", "us", or "our") respects your privacy. This Privacy Policy explains how the iOS app 仪表盘·记录 (Dash Record) and its widget (the "App") handle information on your device, why that information is used, how long it remains, and how you can control it. It also describes the one request the App sends to an outside weather service.
 
 Please read this Policy before using the App. By installing, opening, or continuing to use the App, you acknowledge that you have read and understood this Policy.
 
@@ -18,28 +18,32 @@ For the EU General Data Protection Regulation (GDPR), the UK GDPR, and similar l
 
 Qingyu Meng
 Email: mcry416@outlook.com
-2. No third-party services
-The App does not integrate any third-party service operated independently of Apple's operating system. In particular, we do not integrate:
+2. One independent third-party service: weather
+The App integrates exactly one service that is operated independently of Apple's operating system: WeatherAPI.com, which supplies the local weather shown in the home-screen time tile and in the widget. It is used for nothing else. We do not integrate:
 
 third-party analytics, crash reporting, or profiling
 third-party advertising or cross-app tracking
 third-party sign-in, payment, or social-sharing SDKs
-third-party cloud storage, cloud sync, or upload to a remote server
-We do not operate a server that receives your personal information. Except for the on-device system capabilities described in Section 4, the App does not send your personal information to the developer or to any third party.
+third-party cloud storage, cloud sync, or any other upload to a remote server
+The weather request is described in Section 3.7. It carries coordinates, or exposes an IP address to that provider, and it carries our API key. It carries no account, name, email address, device identifier, or advertising identifier. We do not run a server of our own, we never receive that request or its response, and we cannot see the weather you looked up.
+
+Apart from that single weather service — and except for the on-device system capabilities described in Section 4 — the App does not send your personal information to us or to anyone else.
 
 3. Information processed on your device
 The information below is collected or generated on your device by system frameworks and stored locally so the App can provide the features you choose to use.
 
 3.1 Location
-With your permission, the App uses location to estimate speed, show your position on a map, and build track and trip traces. During an active track recording, the App may continue to receive location while it is in the background so the trace is not interrupted. That background use serves only a recording you have already started. The App does not keep tracking you when you are not using the related feature.
+With your permission, the App uses location to estimate speed, show your position on a map, build track and trip traces, and fetch the local weather for the time tile. During an active track recording, the App may continue to receive location while it is in the background so the trace is not interrupted. That background use serves only a recording you have already started. The App does not keep tracking you when you are not using the related feature.
 
 Location data may include latitude and longitude, speed, course, timestamps, and mileage or track points calculated from them. Precise location of this kind may be treated as sensitive personal information under some US state laws. It stays on your device.
+
+One request does leave the device: when the time tile or the widget fetches a forecast, the current coordinates are sent to the weather provider, as described in Section 3.7. Everything else in this section stays on your device.
 
 3.2 Motion and sensors
 With your permission, the App reads acceleration, gyroscope, device attitude, and system motion activity for dashboard readings such as acceleration, attitude, and 0–100 km/h timing. These readings come from the phone's sensors and are affected by mounting, road conditions, and system error.
 
 3.3 Camera, microphone, and Photos
-The App uses the camera and microphone only when you choose to record a track video. It writes to the Photos library only when you choose to save a video or an achievement image. The App does not read your existing photo library and does not capture images or audio in the background.
+This version of the App does not request camera, microphone, or Photos access, and it never reads your photo library. A track-video recording feature is in preparation but is not enabled here. If a later version enables it, the App will ask for those permissions at that time, will use the camera and microphone only to record a video you start, and will write to the Photos library only when you choose to save a video or an achievement image. The App never captures images or audio in the background.
 
 3.4 System music
 The home-screen music tile reads now-playing information on the device, such as title, artist, artwork, and playback progress, and may control playback through the system music player. That information is used only to display and control playback on your device. It is not uploaded.
@@ -50,32 +54,46 @@ To provide the related features, the App stores the following on your device:
 dashboard layouts, appearance, and dashboard packages you import or edit
 track sessions, track points, lap times, driving events, and records you export
 0–100 km/h runs and curves
-mileage and energy-estimate records, and energy parameters you enter
+mileage records
 achievement progress
 preferences such as display, units, and feature switches
+a cached weather forecast and the location query it was fetched with (see Section 3.7)
 3.6 Information we do not ask for
-The App does not ask for your name, phone number, email address, government ID, contacts, health data, or payment information. We do not collect an advertising identifier, and we do not track you across apps or websites.
+The App does not ask for your name, phone number, email address, government ID, contacts, health data, or payment information. We do not collect an advertising identifier, and we do not track you across apps or websites. Purchases are processed by Apple; we never receive your payment details or your Apple ID.
+
+3.7 Weather — the one request that leaves your device
+To show the forecast on the time tile and in the widget, the App sends a request to WeatherAPI.com (api.weatherapi.com). The request contains:
+
+the current coordinates rounded to four decimal places (about 11 m), when you have granted location access; or
+no coordinates at all, in which case the provider works out an approximate location from the requesting IP address
+the App's current language, the number of forecast days, and our API key
+There is no account, name, email address, device identifier, or advertising identifier in the request, and nothing comes back except weather data. WeatherAPI.com handles that request as an independent controller under its own privacy policy at https://www.weatherapi.com/privacy.aspx, which we do not control.
+
+The forecast — together with the location query it was fetched with — is cached in the App sandbox (Caches directory) so the tile can redraw without a new request. The cache is replaced on the next successful fetch and is removed when you uninstall the App. If you would rather not send this request, do not use the time tile or the widget; every other feature works on the device alone.
 
 4. System capabilities
-Map tiles, location, motion sensors, camera, microphone, Photos writes, and system music control are provided by iOS frameworks. When map tiles load, the related network request is handled by Apple's system. We do not receive, store, or forward the contents of that communication.
+Map tiles, location, motion sensors, and system music control are provided by iOS frameworks. When map tiles load, the related network request is handled by Apple's system. We do not receive, store, or forward the contents of that communication.
 
-The widget displays information on the device. It does not send data back to the developer.
+The weather forecast is not an Apple service: it comes from WeatherAPI.com, as described in Section 3.7. That is the only request the App itself sends.
+
+The widget displays information on the device. Its only network request is the weather request described in Section 3.7; it does not send anything else back to the developer.
 
 5. Why this information is used
-We use the information only on your device to:
+We use the information to:
 
 show speed, acceleration, attitude, time, map, and other dashboard content
-record and replay tracks, time 0–100 km/h runs, and estimate mileage and energy use
+record and replay tracks, time 0–100 km/h runs, and estimate mileage
+show the local weather in the time tile and in the widget, which needs the request described in Section 3.7
 keep your dashboard setups, achievements, and settings
-record video or save images when you ask the App to do so
+export or share a record when you ask the App to do so
 show and control music that is already playing on the device
-We do not use this information for advertising, sale, profiling, or any purpose unrelated to those features.
+The weather request in Section 3.7 is the only processing that leaves your device. We do not use this information for advertising, sale, profiling, or any purpose unrelated to those features.
 
 Under the GDPR and UK GDPR, the relevant grounds are:
 
-Steps you request before and during use of a feature (performance of a contract, or of requested services): processing that is necessary to show the dashboard, record a track, time a run, estimate energy, or save a file you asked for.
-Consent: system permissions you grant for location, motion, camera, microphone, Photos, or the media library. You may withdraw a permission in iOS Settings. Withdrawal does not affect processing that already occurred on your device, and it disables only the feature that depends on that permission.
-Legitimate interests: keeping the App stable and limited to on-device operation, where those interests are not overridden by your rights. Because the data remains on your device and is not sent to us, this ground is narrow.
+Steps you request before and during use of a feature (performance of a contract, or of requested services): processing that is necessary to show the dashboard, record a track, time a run, fetch the local weather, or save a file you asked for.
+Consent: system permissions you grant for location or motion, or for the media library. You may withdraw a permission in iOS Settings. Withdrawal does not affect processing that already occurred on your device, and it disables only the feature that depends on that permission.
+Legitimate interests: keeping the App stable and limited to on-device operation, where those interests are not overridden by your rights. Because the data remains on your device and is not sent to us — apart from the weather request in Section 3.7 — this ground is narrow.
 We do not process special-category data such as health, biometric identification, or information about your racial or ethnic origin, political opinions, religious beliefs, or sex life.
 
 6. Where information is stored, for how long, and how it is protected
@@ -85,36 +103,40 @@ Records remain until you delete them in the App, erase the related data, or unin
 
 Protect your device with a passcode, Face ID, or Touch ID. Loss of the device, a jailbreak, sharing the device, or files you export yourself are outside our control.
 
+The weather cache described in Section 3.7, including the coordinates it was fetched with, stays in the App's Caches directory until a newer forecast replaces it or until the App is uninstalled.
+
 7. Permissions and your choices
 The App asks for a system permission when you first use the related feature. You may refuse, and you may turn the permission off later in iOS Settings. Refusing or turning off a permission affects only the feature that needs it.
 
 Permission	Purpose	If it is off
 Location
-Speed, map position, traces, and background continuation of an active recording
+Speed, map position, traces, the local weather, and background continuation of an active recording
 Speed, map, and traces that depend on location are unavailable
 Motion & Fitness
 Acceleration, attitude, and motion activity
 Those dashboard readings are unavailable
 Camera
-Track video
-Video recording is unavailable
+Not requested in this version
+No effect; video recording is not enabled
 Microphone
-Audio for a track video
-The video may have no sound
+Not requested in this version
+No effect; video recording is not enabled
 Add to Photos
-Saving a video or achievement image
-The App cannot write to Photos
+Not requested in this version
+No effect; the App does not write to Photos
 Media Library
 Showing and controlling music that is playing on the system
 The music tile cannot read the library
-You can also delete track, energy, and similar records inside the App. Uninstalling the App deletes data stored in its sandbox.
+You can also delete track, mileage, and similar records inside the App. Uninstalling the App deletes data stored in its sandbox.
 
 8. Disclosure
 We do not sell, rent, trade, or share your personal information with third parties. We have no business function that requires us to provide it to anyone else.
 
 Under the California Consumer Privacy Act, as amended by the CPRA, "sell" and "share" have specific meanings, including disclosing personal information for cross-context behavioral advertising. We do not sell or share personal information in that sense. We have no actual knowledge of selling or sharing the personal information of consumers under 16.
 
-If you save a video to Photos, export a record, share content through the system, or show your screen in public, that is your own disclosure. What a recipient does with the content is outside this Policy.
+If you export a record, share content through the system, or show your screen in public, that is your own disclosure. What a recipient does with the content is outside this Policy.
+
+There is one exception, and it is not a sale and not a share: the weather request in Section 3.7 discloses coordinates (or, when location access is off, exposes an IP address) to WeatherAPI.com for the sole purpose of returning a forecast. No money or other valuable consideration changes hands for it, and it is not used for cross-context behavioral advertising.
 
 If a law, lawsuit, or binding order requires cooperation, we will respond as the law allows. Because the data is on your device, we usually do not hold a server copy that we can produce.
 
@@ -126,7 +148,7 @@ If you believe a child has provided personal information through the App, contac
 10. European Economic Area, United Kingdom, and Switzerland
 This section applies if the GDPR, the UK GDPR, or the Swiss Federal Act on Data Protection applies to you.
 
-No transfer to us. Personal information is processed on your device. We do not receive it, so we do not transfer it to a country outside your own, and we do not use it for automated decision-making that produces legal or similarly significant effects. Dashboard figures are calculations for display. They are not decisions about you.
+No transfer to us. Personal information is processed on your device. We do not receive it, so we do not transfer it to a country outside your own, and we do not use it for automated decision-making that produces legal or similarly significant effects. Dashboard figures are calculations for display. They are not decisions about you. One request does leave your device: the weather request in Section 3.7. It goes to WeatherAPI.com, not to us, and it carries coordinates or exposes your IP address to that provider. If you do not want that, do not use the time tile or the widget.
 
 Your rights. Subject to the limits of a service that stores data only on your device, you may request:
 
@@ -147,7 +169,7 @@ No solely automated legal decisions. Nothing in the App is a decision that affec
 11. United States
 This section applies if you live in a US state with a consumer privacy law, including California, Colorado, Connecticut, Virginia, Utah, Texas, Oregon, and other states with similar statutes. Some of those laws apply only to businesses above a size or volume threshold. Even where a statute does not legally bind us, we follow the commitments in this section for data the App processes.
 
-Categories. On the device, the App may process approximate or precise location, sensor and motion readings, audio and video you record, photos or videos you save, now-playing music metadata, and records and settings you create. We do not collect identifiers such as a name, email address, or advertising ID through the App. We do not receive these categories on our own systems.
+Categories. On the device, the App may process approximate or precise location (and, for the weather tile, disclose it to the weather provider as described in Section 3.7), sensor and motion readings, now-playing music metadata, and records and settings you create. This version does not use the camera, the microphone, or the photo library. We do not collect identifiers such as a name, email address, or advertising ID through the App. We do not receive these categories on our own systems.
 
 Your rights may include:
 
@@ -159,7 +181,7 @@ the right to opt out of profiling used for decisions that produce legal or simil
 the right to limit the use of sensitive personal information, including precise location, to what is necessary for the features you request
 the right to appeal a refusal, where your state provides an appeal
 the right to use an authorized agent, where your state allows one, provided the agent can show authorization
-We do not sell or share personal information, and we do not use it for targeted advertising or for profiling of that kind. Precise location is used only to provide the location-based features you turn on. We will not discriminate against you for exercising a privacy right. The App has no loyalty program or different price tied to those rights.
+We do not sell or share personal information, and we do not use it for targeted advertising or for profiling of that kind. Precise location is used only to provide the location-based features you turn on — which, for the weather tile, means the request in Section 3.7. We will not discriminate against you for exercising a privacy right. The App has no loyalty program or different price tied to those rights.
 
 To exercise a right, use the in-app delete and settings controls, or email mcry416@outlook.com. We will verify a request in a reasonable way. If we refuse a request where an appeal right exists, the response will explain how to appeal.
 
