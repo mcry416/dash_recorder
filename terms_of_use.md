@@ -3,7 +3,7 @@
 ### Developer: Qingyu Meng
 ### Contact: mcry416@outlook.com
 ### Effective date: 3 October 2026
-### Last updated: 3 October 2026
+### Last updated: 12 October 2026
 
 ### Please read these Terms before using 仪表盘·记录 (Dash Record) and its widget (the "App"). By installing, opening, or continuing to use the App, you agree to these Terms. If you do not agree, stop using the App and uninstall it.
 
@@ -14,22 +14,22 @@ The App is a dashboard aid for iPhone and iPad. It mainly provides:
 
 live dashboard readings from the phone's sensors and location, including speed, acceleration, attitude, map, and time
 an editable dashboard layout
-track recording, trajectory replay, and video recording that you start
+track recording and trajectory replay (video recording is not enabled in this version)
 0–100 km/h timing
-mileage figures and energy estimates
+mileage figures
+a local weather forecast supplied by a third-party service — see the Privacy Policy, Section 3.7
 achievements, home-screen tiles, and a home-screen widget
 The App is not a factory instrument cluster, not a legal measuring instrument, not a navigation device, and not a driver-assistance or automated-driving system. It does not connect to a vehicle bus, and it cannot read or control braking, steering, powertrain, or any other vehicle electronic system.
 
 2. Figures are for reference only
 Every figure the App shows, records, or exports is for personal reference and entertainment. It is not a measurement certificate, an expert opinion, professional advice, or evidence for any legal, administrative, or commercial purpose.
 
-Device placement and angle, satellite reception, sensor noise, system delay, sampling and filtering, map data, energy parameters you enter, and the limits of the algorithms themselves can all make the following differ from the vehicle's true state, sometimes by a wide margin:
+Device placement and angle, satellite reception, sensor noise, system delay, sampling and filtering, map data, and the limits of the algorithms themselves can all make the following differ from the vehicle's true state, sometimes by a wide margin:
 
 speed, mileage, position, course, and track
 acceleration, 0–100 km/h time, and attitude
-energy, fuel, or electricity estimates
 lap times, track results, and any chart or statistic
-data overlaid on a video or exported afterward
+data you export afterward
 You understand and agree that:
 
 You will not use those figures as evidence of fault in a crash, of an insurance claim, of a traffic or criminal matter, of a lawsuit or arbitration, of an administrative decision, of a vehicle inspection, of a used-vehicle sale, of an official race result, of a scientific test, or of any other matter that needs legally or contractually recognized proof.
@@ -53,12 +53,12 @@ rent, lend, sell, sublicense, or commercially resell the App
 remove or hide copyright, trademark, or other rights notices
 use the App for an unlawful purpose, or interfere with the App or the system functions it relies on
 use the App to fabricate a driving record in order to mislead another person
-The App and its interface, graphics, text, code, and original design are owned by the developer or the relevant rights holders. You keep your rights in videos you record, materials you import, and other personal content you lawfully own. You grant us only the local license needed to run those features on your device. That license does not include any upload.
+The App and its interface, graphics, text, code, and original design are owned by the developer or the relevant rights holders. You keep your rights in materials you import and other personal content you lawfully own. You grant us only the local license needed to run those features on your device. That license does not include any upload.
 
 Third-party fonts, system frameworks, and open-source components are used under their own licenses. Map data and related trademarks belong to their owners.
 
 5. Your content and your device
-Track records, videos, dashboard setups, energy parameters, and achievement data stay on your device by default. Back up anything you want to keep. Uninstalling the App, clearing data, a system failure, or damage to the device can make data unrecoverable. We have no cloud copy to restore.
+Track records, dashboard setups, imported materials, and achievement data stay on your device by default. The only information that leaves your device is the weather request described in the Privacy Policy, Section 3.7. Back up anything you want to keep. Uninstalling the App, clearing data, a system failure, or damage to the device can make data unrecoverable. We have no cloud copy to restore.
 
 You will not use the App to record, store, or distribute content that infringes another person's privacy, likeness, intellectual property, or other rights. Where the law requires consent before recording on a public road or on private property, you are responsible for obtaining it.
 
@@ -75,7 +75,6 @@ In particular:
 the App does not replace safe driving, professional repair, navigation, or emergency services
 reference figures are not legal evidence
 if a permission is denied, a signal is lost, the system suspends the App, or the device is under load, a recording may be incomplete
-energy results depend on parameters you enter and on an estimation model; they are not a metered reading of the vehicle's true energy use
 Some jurisdictions do not allow the exclusion of certain warranties. In those jurisdictions, the exclusions in this section apply only as far as the law allows.
 
 8. Limitation of liability
@@ -103,7 +102,7 @@ Nothing excludes or limits liability for death or personal injury caused by our 
 The warranty disclaimer and the liability cap apply only to the extent your national law allows them. Statutory rights regarding digital content that is not as described, not fit for its usual purpose, or not of satisfactory quality remain in force.
 You may bring proceedings in the courts of your place of residence. We may bring proceedings against you only in those courts, unless a mandatory rule says otherwise.
 These Terms do not choose a law that would deprive you of the protection of mandatory rules of your country of residence. Where such a rule conflicts with Section 13, that mandatory rule controls.
-Purchases and refunds of paid apps or in-app items, if any are offered later, are handled by Apple under Apple's terms and the statutory withdrawal rules that apply to App Store transactions. The current App does not by itself conclude a paid contract with the developer.
+Purchases and refunds are handled by Apple under Apple's terms and the statutory withdrawal rules that apply to App Store transactions. See Section 14.
 A track recording, a timing run, or another figure produced by the App is still only a reference aid. Consumer law does not turn that figure into legal proof of speed, fault, or a race result.
 
 12. United States
@@ -118,6 +117,13 @@ These Terms are governed by the laws of the People's Republic of China, excludin
 
 Please contact mcry416@outlook.com first so we can try to resolve a dispute. If we cannot resolve it, either party may submit it to the court that has jurisdiction at the defendant's domicile, except that a consumer in the EEA, the UK, or Switzerland may sue in the courts of their place of residence, and a US user may sue in a court that their non-waivable state or federal law designates.
 
-14. Contact
+14. Purchases
+The App offers one non-consumable in-app purchase: a one-time unlock of the Pro features. It is a single payment, not a subscription, and it does not renew. The App Store shows the price in your local currency before you confirm.
+
+Purchases and refunds are handled by Apple under Apple's terms and the statutory withdrawal rules that apply to App Store transactions. The developer does not process the payment and does not receive your name, Apple ID, or payment details; Apple does. You can restore the purchase on other devices signed in with the same Apple ID using the Restore button on the purchase page. To request a refund, use Apple's refund process; we cannot issue refunds ourselves. If a purchase is pending approval, the Pro features unlock once Apple approves it.
+
+If you obtain the App for free, this section does not apply to you, and the features that are free stay free.
+
+15. Contact
 Developer: Qingyu Meng
 Email: mcry416@outlook.com
